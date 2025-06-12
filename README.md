@@ -21,10 +21,11 @@ Subir y organizar correctamente los materiales de clase en GitHub usando Visual 
 - Visual Studio Code
 - Git y GitHub
 
-## 👨‍💻 Autor
+## 👨‍💻 Autores
 
 **Joseph Andrés**  
 **Daniel Quingalombo** 
+
 Estudiante de Pedagogía en Mecatrónica  
 [GitHub: ANDRES80103](https://github.com/ANDRES80103)
 

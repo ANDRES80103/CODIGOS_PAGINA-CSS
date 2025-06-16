@@ -1,11 +1,11 @@
 # CODIGOS_PAGINA-CSS
 
-Este repositorio contiene 11 archivos en formato `.ipynb` (Jupyter Notebooks) y un archivo PDF.  
+Este repositorio contiene 11 archivos en formato `.css y .html` y un archivo PDF.  
 Todo el contenido corresponde a ejercicios y temas abordados en el curso de programación y desarrollo web.
 
 ## 📁 Contenido
 
-- ✅ Notebooks de desarrollo en CSS
+- ✅ Codigos de desarrollo en CSS
 - ✅ Ejercicios con estructuras condicionales y bucles
 - ✅ Ejemplos de CSS y diseño web
 - ✅ PDF resumen del proyecto
@@ -17,7 +17,7 @@ Subir y organizar correctamente los materiales de clase en GitHub usando Visual 
 ## 🛠️ Tecnologías utilizadas
 
 - Python 3
-- Jupyter Notebooks
+- CSS Y HTML
 - Visual Studio Code
 - Git y GitHub
 

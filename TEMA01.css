@@ -1,5 +1,241 @@
-hola mundogit branch
-nxn
-xjx
-xjxxj
-zjsjs
+ Nociones básicas
+ p {
+  color: red;   /* Color de texto */
+}
+
+p {
+  color: red;   /* Color de texto */
+}
+
+p {
+  color: red;   /* Color de texto */
+}
+
+.container .item,
+.container .parent,
+.container .element {
+  /* ... */
+}
+
+.container :is(.item, .parent, .element) {
+  /* ... */
+}
+
+.parent {
+  background: grey;
+}
+
+.parent .element {
+  background: darkred;
+}
+
+.parent .element:hover {
+  background: red;
+}
+
+.parent {
+  background: grey;
+
+  & .element {
+    background: darkred;
+
+    &:hover {
+      background: red;
+    }
+  }
+}
+.parent {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.parent {
+  display: grid;
+  place-items: center;
+}
+
+.parent {
+  width: 300px;
+  height: 300px;
+  background: grey;
+}
+
+.parent {
+  --size: 300px;
+
+  width: var(--size);
+  height: var(--size);
+  background: var(--color, grey);
+}
+
+
+
+@media (min-width: 800px) and
+       (max-width: 1280px) {
+  .menu {
+    background: red;
+  }
+}
+
+@media (800px <= width <= 1280px) {
+  .menu {
+    background: red;
+  }
+}
+.container {
+  width: 300px;
+  height: 200px;
+  background: indigo;
+}
+
+.container {
+  font-size: 1em;
+}
+
+body {
+  margin: 0;    /* Reset */
+}
+
+.container {
+  width: 50vw;
+  height: 50vh;
+  background: indigo;
+}
+
+
+.container {
+  width: 600px;
+  transition: width 1s linear;
+}
+
+.container {
+  width: 300px;
+  height: 200px;
+  background: indigo;
+}
+
+.parent {
+  width: 200px;
+  height: 200px;
+  background: grey;
+}
+
+.child {
+  width: 50%;
+  height: 100px;
+  background: indigo;
+}
+
+.element {
+  background: blue;
+  font-size: 32px;
+  width: 2em;
+  height: 2em;
+  color: white;
+}
+
+.container {
+  font-size: 32px;
+  color: white;
+}
+
+.element {
+  background: blue;
+  width: 1em;
+  height: 2em;
+}
+
+:root {
+  font-size: 22px;    /* Tamaño base */
+}
+
+h1 {
+  font-size: 2rem;    /* El doble: 2 x 22px = 44px */
+}
+
+h2 {
+  font-size: 1rem;    /* El mismo: 1 x 22px = 22px */
+}
+
+.element {
+  font-family: "Victor Mono", monospace;
+  font-size: 2rem;
+  background: #111;
+  color: #eee;
+  width: 8ch;
+}
+
+:root {
+  --background-color: black;
+}
+
+:root {
+  --background-color: indigo;
+}
+
+body {
+  background: var(--background-color);
+}
+
+body {
+  background: var(--background-color, green);
+}
+
+.parent {
+  --background-color: black;
+
+  background: indigo;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+  background: var(--background-color);
+}
+
+.first {
+  --background-color: gold;
+}
+
+.love-type {
+  --color: darkred;
+}
+
+.card {
+  max-width: 250px;
+  border: 6px solid black;
+  padding: 1rem;
+  box-shadow: 6px 6px 10px #000a;
+  background: linear-gradient(black, var(--color));
+
+  & .frame {
+    border: 6px solid var(--color);
+    background: white;
+    display: grid;
+    place-items: center;
+  }
+
+  & h2 {
+    text-align: center;
+    background: var(--color);
+    color: white;
+    padding: 0 0.75rem;
+  }
+
+  & img {
+    width: 90%;
+  }
+}
+
+/* El código Sass anterior es equivalente a este código CSS */
+.parent {
+  background: #fff;
+}
+
+.element {
+  background: #fff;
+}

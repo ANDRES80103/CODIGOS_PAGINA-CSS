@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💻 Responsive Web Design</title>
+  <style>
+    :root {
+      --color: grey;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header,
+    .page,
+    footer {
+      min-height: 200px;
+      background: grey;
+    }
+
+    .menu {
+      min-height: 200px;
+      display: inline-block;
+      background: blue;
+      width: 30%;
+      height: 100px;
+    }
+
+    .content {
+      min-height: 200px;
+      display: inline-block;
+      background: lightgrey;
+      width: 70%;
+    }
+
+    .picture {
+      min-height: 200px;
+      background: grey;
+      max-width: 1024px;
+      min-width: 800px;
+    }
+
+    img,
+    video,
+    object,
+    embed {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      background: var(--color, grey);
+      min-height: 200px;
+      padding: 1rem 2rem;
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        --color: indigo;
+      }
+    }
+
+    @media (min-width: 750px) {
+      .container {
+        --color: green;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .menu {
+        background: blue;
+      }
+    }
+
+    @media (min-width: 400px) and (max-width: 800px) {
+      .menu {
+        background: red;
+      }
+    }
+
+    @media (min-width: 800px) {
+      .menu {
+        background: green;
+      }
+    }
+
+    @media (orientation: landscape) {
+      .container {
+        background: green;
+        color: white;
+      }
+    }
+
+    @media (scripting: none) {
+      .js {
+        display: none;
+      }
+    }
+
+    @media (any-hover: none) {
+      .container {
+        background: red;
+        color: white;
+      }
+    }
+
+    /* Impresión */
+    @media print {
+      .navigation,
+      .banner,
+      .menu {
+        display: none;
+      }
+
+      body,
+      .content {
+        font-family: Ecofont, sans-serif;
+        background: white;
+        color: black;
+      }
+
+      a::after {
+        content: "(" attr(href) ")";
+        padding: 0 5px;
+      }
+
+      table,
+      img,
+      pre,
+      code {
+        break-inside: avoid;
+      }
+    }
+
+    @page {
+      size: 8.27in 11.69in;
+      margin: 0.5in;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 style="text-align:center;">📱 Responsive Web Design</h1>
+  </header>
+
+  <div class="page">
+    <div class="menu">Menú</div>
+    <div class="content">
+      <p>Contenido adaptable según el tamaño de la pantalla.</p>
+    </div>
+  </div>
+
+  <section class="container">
+    <p>Esta sección cambia de color con media queries.</p>
+  </section>
+
+  <div class="picture">
+    <img src="https://via.placeholder.com/800x200" alt="Imagen de prueba">
+  </div>
+
+  <footer>
+    <p style="text-align:center;">&copy; 2025 - Responsive Demo</p>
+  </footer>
+
+</body>
+</html>

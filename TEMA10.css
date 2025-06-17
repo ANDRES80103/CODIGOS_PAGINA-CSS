@@ -1,0 +1,181 @@
+Responsive
+Responsive Web Design
+
+header,
+.page,
+footer {
+  min-height: 200px;
+  background: grey;
+}
+
+.menu {
+  min-height: 200px;
+  display: inline-block;
+  background: blue;
+  width: 30%;
+}
+
+.content {
+  min-height: 200px;
+  display: inline-block;
+  background: lightgrey;
+  width: 70%;
+}
+
+.picture {
+  min-height: 200px;    /* Por defecto, height es 0 */
+  background: grey;     /* Simplemente, para verlo visualmente */
+
+  max-width: 1024px;
+  min-width: 800px;
+}
+
+img,
+video,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (*condición*) {
+  .container {
+    background: green;
+  }
+}
+
+@media not (*condición*) {
+  .container {
+    background: red;
+  }
+}
+
+.container {
+  background: var(--color, grey);
+  min-height: 200px;
+  padding: 1rem 2rem;
+}
+
+@media (width <= 550px) {
+  .container {
+    --color: indigo;
+  }
+}
+
+@media (width >= 750px) {
+  .container {
+    --color: green;
+  }
+}
+
+.container {
+  background: var(--color, grey);
+  min-height: 200px;
+  padding: 1rem 2rem;
+
+  @media (width <= 550px) { --color: indigo; }
+  @media (width >= 750px) { --color: green; }
+}
+
+.menu {
+  height: 100px;
+}
+
+@media (max-width: 400px) {
+  .menu {
+    background: blue;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+  .menu {
+    background: red;
+  }
+}
+
+@media (min-width: 800px) {
+  .menu {
+    background: green;
+  }
+}
+
+@media (orientation: landscape) {
+  .container {
+    background: green;
+    color: white;
+  }
+}
+
+@media (scripting: none) {
+  .js {
+    display: none;
+  }
+}
+
+/* Al menos 2ddpx (1ddpx = 96dpi) */
+@media (resolution >= 2dppx) { /* ... */ }
+
+/* Puede necesitar diferente CSS */
+@media (scan: interlace) { /* ... */ }
+
+/* Móviles antiguos de texto */
+@media (grid) { /* ... */ }
+
+/* Ebooks readers o pantallas antiguas */
+@media (update: slow) { /* ... */ }
+
+@media (any-hover: none) {
+  .container {
+    background: red;
+    color: white;
+  }
+}
+
+.container {
+  container: parent;
+}
+
+@container parent (max-width: 500px) and style(--responsive: true) {
+  .item {
+    background: blue;
+  }
+}
+
+@media print {
+  /* Ocultar zonas no relevantes */
+  .navigation,
+  .banner,
+  .menu {
+    display: none;
+  }
+
+  /* Cambiar tipografía o alternar colores */
+  body,
+  .content {
+    font-family: Ecofont, sans-serif;
+    background: white;
+    color: black;
+  }
+
+  /* Mostrar enlaces */
+  a::after {
+    content: "(" attr(href) ")";
+    padding: 0 5px;
+  }
+}
+
+@page {
+  size: 8.27in 11.69in;  /* DIN A4 */
+  margin: 0.5in 0.5in 0.5in 0.5in;
+}
+
+@media print {
+  table,
+  img,
+  pre,
+  code {
+    break-inside: avoid;
+  }
+}
+
+

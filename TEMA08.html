@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tema 8: Interfaz de Usuario - Interacciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      margin: 2rem;
+      line-height: 1.5;
+    }
+    h1 {
+      color: darkblue;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #333366;
+      margin-top: 2rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.2rem;
+    }
+    pre {
+      background: #222;
+      color: #f0f0f0;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      max-height: 400px;
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+    /* Ejemplo visual para .element */
+    .element {
+      text-align: center;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black;
+      outline-width: 5px;
+      outline-style: solid;
+      outline-color: red;
+      outline-offset: 10px;
+      width: 200px;
+      height: 200px;
+      background: indigo;
+      cursor: help;
+      margin: 1rem auto;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    /* Contenedor con scroll personalizado */
+    .container {
+      width: 300px;
+      max-height: 100px;
+      border: 1px solid #222;
+      font-size: 1.2rem;
+      color: #fff;
+      background: #000;
+      padding: 1rem;
+      overflow-y: scroll;
+      resize: both;
+      margin: 2rem auto;
+    }
+    .container::-webkit-scrollbar {
+      width: 15px;
+      background: #333;
+    }
+    .container::-webkit-scrollbar-track {
+      background: #444;
+    }
+    .container::-webkit-scrollbar-thumb {
+      background: yellowgreen;
+    }
+    .container::-webkit-scrollbar-thumb:hover {
+      background: lawngreen;
+    }
+    .container::-webkit-scrollbar-thumb:active {
+      background: deeppink;
+    }
+    .container::-webkit-scrollbar-button:single-button:vertical:decrement {
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg' fill='white'><polygon points='50,0 0,50 100,50'/></svg>");
+      background-repeat: no-repeat;
+      background-position: 2px 5px;
+    }
+    .container::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+      background-color: red;
+    }
+    .container::-webkit-scrollbar-button:single-button:vertical:increment {
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg' fill='white'><polygon points='0,0 100,0 50,50'/></svg>");
+      background-repeat: no-repeat;
+      background-position: 2px 6px;
+    }
+    .container::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+      background-color: red;
+    }
+
+    /* Scroll snap vertical */
+    .container-snap {
+      height: 300px;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      border: 1px solid #666;
+      margin: 2rem auto;
+      padding: 0.5rem;
+      background: #ddd;
+      width: 200px;
+    }
+    .slide {
+      height: 100px;
+      scroll-snap-align: start;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: white;
+    }
+    .slide:nth-child(1) { background: #aaa; }
+    .slide:nth-child(2) { background: steelblue; }
+    .slide:nth-child(3) { background: tomato; }
+
+    /* Scroll snap horizontal */
+    .container-horizontal {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+      width: 330px;
+      overflow-x: scroll;
+      scroll-snap-type: x proximity;
+      margin: 2rem auto;
+      background: lightgrey;
+      padding: 1em;
+      border: 1px solid #ccc;
+    }
+    .item {
+      background: red;
+      width: 150px;
+      height: 50px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+      scroll-margin: 15px;
+      font-weight: bold;
+    }
+
+    /* Tabla simple */
+    table {
+      border: 1px solid #000;
+      border-collapse: separate;
+      border-spacing: 5px;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 600px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    th {
+      background: #333366;
+      color: white;
+    }
+
+    /* Listas con estilos y contadores */
+    ul {
+      list-style-position: inside;
+      margin: 2rem auto;
+      max-width: 600px;
+      padding-left: 0;
+      list-style-type: upper-roman;
+    }
+    li {
+      margin: 0.3rem 0;
+    }
+    li::marker {
+      color: red;
+    }
+    li {
+      list-style: circle inside none;
+    }
+
+    /* Contador personalizado */
+    .item-counter {
+      counter-increment: detail-counter;
+    }
+    .item-counter::before {
+      content: counter(detail-counter) " ";
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💠 <b>Layouts en CSS - Tema 8: Interfaz de Usuario - Interacciones</b></h1>
+
+  <h2>Ejemplo de .element con borde y outline</h2>
+  <div class="element">.element</div>
+
+  <h2>Contenedor con scroll y scrollbar personalizado</h2>
+  <div class="container">
+    Este es un contenedor con scroll vertical y scrollbar estilizado.<br/>
+    Prueba a hacer scroll para ver los estilos.<br/>
+    Contenido de ejemplo para scroll.<br/>
+    Más contenido para scroll.<br/>
+    Incluso más contenido.<br/>
+    Continúa desplazándote.<br/>
+    Scroll, scroll, scroll...
+  </div>
+
+  <h2>Scroll Snap Vertical</h2>
+  <div class="container-snap">
+    <div class="slide">Slide 1</div>
+    <div class="slide">Slide 2</div>
+    <div class="slide">Slide 3</div>
+  </div>
+
+  <h2>Scroll Snap Horizontal</h2>
+  <div class="container-horizontal">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+  </div>
+
+  <h2>Tabla con borde y separación</h2>
+  <table>
+    <thead>
+      <tr><th>Columna 1</th><th>Columna 2</th><th>Columna 3</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Dato 1</td><td>Dato 2</td><td>Dato 3</td></tr>
+      <tr><td>Dato A</td><td>Dato B</td><td>Dato C</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Listas con estilos y contadores</h2>
+  <ul>
+    <li class="item-counter">Elemento uno</li>
+    <li class="item-counter">Elemento dos</li>
+    <li class="item-counter">Elemento tres</li>
+  </ul>
+
+  <h2>Código CSS original</h2>
+  <pre>
+.element {
+  text-align: center;
+
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+
+  outline-width: 5px;
+  outline-style: solid;
+  outline-color: red;
+  outline-offset: 10px;
+}
+
+.element {
+  width: 200px;
+  height: 200px;
+  background: indigo;
+  cursor: url("cursor.png") 0 0, pointer;   /* Con posición */
+}
+
+.container {
+  width: 300px;
+  max-height: 50px;
+  border: 1px solid #222;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #000;
+  padding: 2rem;
+  overflow-y: scroll;
+  resize: both;
+}
+
+.container::-webkit-scrollbar {
+  width: var(--width, 15px);
+  background: #333;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #444;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: yellowgreen;
+}
+
+.container::-webkit-scrollbar-thumb:hover { background: lawngreen; }
+.container::-webkit-scrollbar-thumb:active { background: deeppink; }
+
+.container::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("down.svg");
+  background-repeat: no-repeat;
+  background-position: 2px 5px;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  background-color: red;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("up.svg");
+  background-repeat: no-repeat;
+  background-position: 2px 6px;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  background-color: red;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 0;
+}
+
+.slide {
+  height: 100%;
+  background: var(--color, #aaa);
+}
+
+.slide:nth-child(2) { --color: steelblue; }
+.slide:nth-child(3) { --color: tomato; }
+
+.container {
+  padding: 1em;
+  background: lightgrey;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 150px;
+  gap: 30px;
+  overflow-x: scroll;
+
+  scroll-snap-type: x proximity;
+}
+
+.item {
+  background: red;
+  width: 150px;
+  height: 50px;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  scroll-snap-align: start;
+  scroll-margin: 15px;
+}
+
+table {
+  border: 1px solid #000;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+li {
+  list-style-image: url("https://manz.dev/assets/stickers/batmanz.png");
+}
+
+ul {
+  list-style-image: url("https://manz.dev/assets/stickers/batmanz.png");
+  list-style-position: inside;
+}
+
+ul {
+  list-style-type: upper-roman;
+}
+
+li::marker {
+  color: red;
+}
+
+li {
+    list-style: circle inside none;
+}
+
+.item {
+  counter-increment: detail-counter;
+}
+
+.item::before {
+  content: counter(detail-counter) " ";
+  font-weight: bold;
+  color: red;
+}
+
+@counter-style spanish {
+  system: cyclic;
+  symbols: "uno" "dos" "tres";
+  suffix: "» ";
+}
+
+ul {
+  list-style-type: spanish;
+}
+
+li::marker {
+  color: red;
+}
+
+@counter-style negative-paren {
+  system: numeric;
+  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+  negative: "(-" ")";
+}
+
+@counter-style negative-minus {
+  system: numeric;
+  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+  negative: "-" "";
+}
+
+ol {
+  list-style-type: negative-paren;
+}
+
+@counter-style decimal-zeropad {
+  system: extends decimal;
+  pad: 3 "0";
+}
+
+ul {
+  list-style-type: decimal-zeropad;
+}
+  </pre>
+
+</body>
+</html>

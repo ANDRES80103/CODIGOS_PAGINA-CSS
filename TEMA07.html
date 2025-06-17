@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Layouts y Maquetación CSS - Ejemplos Completos</title>
+<style>
+  /* Estilos generales */
+  html {
+    background: hotpink;
+    height: 100vh;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 300px;
+    min-height: 250px;
+    margin: auto;
+    background: indigo;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Div y span básicos */
+  div.basic {
+    background: darkblue;
+    margin: 5px;
+    padding: 10px;
+  }
+  span.basic {
+    background: darkred;
+    color: white;
+    margin: 5px;
+    padding: 5px 10px;
+    display: inline;
+  }
+  
+  /* Div como inline */
+  div.inline {
+    background: darkblue;
+    color: white;
+    display: inline;
+    margin: 5px;
+    padding: 10px;
+  }
+  
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    margin: 20px auto;
+    width: max-content;
+  }
+  .item {
+    background: deeppink;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .middle {
+    display: contents;
+  }
+  
+  /* Multicolumnas */
+  .multi-column-container {
+    width: 800px;
+    margin: 20px auto;
+    background: indigo;
+    padding: 1rem;
+    columns: 3 200px;
+    column-gap: 15px;
+    color: white;
+    text-align: justify;
+  }
+  .multi-column-container h2 {
+    background: steelblue;
+    column-span: all;
+    padding: 5px;
+  }
+  
+  /* Flex */
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    background: darkgrey;
+    padding: 10px;
+    margin: 20px auto;
+    width: 220px;
+  }
+  .flex-item {
+    background: indigo;
+    width: 100px;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Grid avanzado */
+  .advanced-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    min-height: 300px;
+    gap: 10px;
+    width: 90vw;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 5px solid black;
+    color: white;
+  }
+  .header { background: indigo; grid-column: 1 / 4; }
+  .sidebar { background: black; }
+  .content { background: orangered; grid-column: 2 / 4; }
+  .footer { background: royalblue; grid-column: 1 / 4; }
+  
+  /* Posicionamiento */
+  .pos-container {
+    position: relative;
+    border: 2px solid white;
+    width: 600px;
+    height: 300px;
+    margin: 20px auto;
+    background: #222;
+  }
+  .pos-a, .pos-b {
+    width: 200px;
+    height: 100px;
+    border: 2px solid black;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  .pos-a {
+    background: darkred;
+    z-index: 5;
+  }
+  .pos-b {
+    background: indigo;
+    top: -50px;
+    left: 50px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Layouts y Maquetación CSS - Ejemplos Completos</h1>
+
+<section class="container">
+  <h2>Div y Span básicos</h2>
+  <div class="basic">Div con fondo azul oscuro</div>
+  <span class="basic">Span con fondo rojo oscuro</span>
+</section>
+
+<section class="container">
+  <h2>Div con display inline</h2>
+  <div class="inline">Div con display inline</div>
+  <span class="basic">Span normal inline</span>
+</section>
+
+<section>
+  <h2>Grid Layout</h2>
+  <div class="grid">
+    <div class="middle">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+  </div>
+</section>
+
+<section class="multi-column-container">
+  <p>Hola a todos. Esto es un pequeño ejemplo donde podremos observar como funciona el sistema de multicolumnas de CSS. Este contenido se basa en un párrafo con información que será separado en varias columnas.</p>
+  <h2>Más información</h2>
+  <p>A lo largo del artículo veremos sus diferentes características y propiedades, y como podemos utilizarlo.</p>
+  <p>En los streams de <strong>ManzDev</strong> puedes echar un vistazo a estas y otras cosas relacionadas con HTML, CSS y Javascript.</p>
+</section>
+
+<section>
+  <h2>Flexbox Layout</h2>
+  <div class="flex-container">
+    <div class="flex-item">Flex 1</div>
+    <div class="flex-item">Flex 2</div>
+    <div class="flex-item">Flex 3</div>
+    <div class="flex-item">Flex 4</div>
+  </div>
+</section>
+
+<section>
+  <h2>Grid avanzado</h2>
+  <div class="advanced-grid">
+    <div class="header">Header (ocupa toda la fila)</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Content (ocupa dos columnas)</div>
+    <div class="footer">Footer (ocupa toda la fila)</div>
+  </div>
+</section>
+
+<section>
+  <h2>Posicionamiento relativo</h2>
+  <div class="pos-container">
+    <div class="pos-a">Caja A</div>
+    <div class="pos-b">Caja B (posicionada)</div>
+  </div>
+</section>
+
+</body>
+</html>

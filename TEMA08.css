@@ -1,0 +1,362 @@
+Interfaz de Usuario
+Interacciones
+
+.element {
+  text-align: center;
+
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+
+  outline-width: 5px;
+  outline-style: solid;
+  outline-color: red;
+}
+
+.element {
+  text-align: center;
+
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+
+  outline-width: 5px;
+  outline-style: solid;
+  outline-color: red;
+  outline-offset: 10px;
+}
+
+div {
+  /* outline: <color> <style> <width> */
+}
+
+.box {
+  text-align: center;
+  border: 5px solid black;
+  outline: 5px solid red;
+}
+
+.element {
+  width: 200px;
+  height: 200px;
+  background: indigo;
+  cursor: help;
+}
+
+.element {
+  width: 200px;
+  height: 200px;
+  background: indigo;
+  cursor: url("cursor.png") 0 0, pointer;   /* Con posición */
+}
+
+.container {
+  width: 350px;
+  height: 75px;
+  background: #111;
+  padding: 1rem;
+  border: 4px solid black;
+  color: #fff;
+  overflow-y: scroll;
+
+  scrollbar-color: deeppink #222;
+  scrollbar-width: thin;
+}
+
+.element-1 {
+  scrollbar-color: deeppink indigo;
+  scrollbar-width: thin;
+  scrollbar-gutter: auto;
+}
+
+.element-2 {
+  scrollbar-color: deeppink indigo;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable both-edges;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #444;
+}
+
+.container::-webkit-scrollbar-track-piece {
+  background: #555;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: yellowgreen;
+}
+.container::-webkit-scrollbar-thumb:hover { background: green; }
+.container::-webkit-scrollbar-thumb:active { background: deeppink; }
+
+.container {
+  width: 300px;
+  max-height: 50px;
+  border: 1px solid #222;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #000;
+  padding: 2rem;
+  overflow-y: scroll;
+}
+
+.container::-webkit-scrollbar {
+  width: var(--width, 15px);
+  background: #333;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #444;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: yellowgreen;
+}
+
+.container::-webkit-scrollbar-thumb:hover { background: lawngreen; }
+.container::-webkit-scrollbar-thumb:active { background: deeppink; }
+
+.container::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg' fill='white'><polygon points='50,0 0,50 100,50'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 2px 5px;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  background-color: red;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg' fill='white'><polygon points='0,0 100,0 50,50'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 2px 6px;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  background-color: red;
+}
+
+.container {
+  width: 300px;
+  max-height: 50px;
+  border: 1px solid #222;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #000;
+  padding: 2rem;
+  overflow-y: scroll;
+  resize: both;
+}
+
+.container::-webkit-scrollbar {
+  width: var(--width, 15px);
+  background: #333;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #444;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: yellowgreen;
+}
+
+.container::-webkit-scrollbar-thumb:hover { background: lawngreen; }
+.container::-webkit-scrollbar-thumb:active { background: deeppink; }
+
+.container::-webkit-resizer {
+  background: linear-gradient(-45deg, gold 50%, black 50%);
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("down.svg");
+  background-repeat: no-repeat;
+  background-position: 2px 5px;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  background-color: red;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("up.svg");
+  background-repeat: no-repeat;
+  background-position: 2px 6px;
+}
+
+.container::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  background-color: red;
+}
+
+html {
+  /* scroll-behavior: smooth; */
+}
+
+body, h1 {
+  margin: 0;    /* Reset margins */
+}
+
+nav {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  background: white;
+  padding: 5px 10px;
+}
+
+.container {
+  height: 100vh;
+}
+
+.slide {
+  height: 100%;
+  background: var(--color, #aaa);
+}
+
+.slide:nth-child(2) { --color: steelblue; }
+.slide:nth-child(3) { --color: tomato; }
+
+body, h1 {
+  margin: 0;    /* Reset margins */
+}
+
+nav {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  background: white;
+  padding: 5px 10px;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 0;
+}
+
+.slide {
+  height: 100%;
+  background: var(--color, #aaa);
+}
+
+.slide:nth-child(2) { --color: steelblue; }
+.slide:nth-child(3) { --color: tomato; }
+
+/* Propiedades de elementos hijos */
+
+.slide {
+  scroll-snap-align: start;
+  scroll-margin: 0;
+}
+
+.slide {
+  scroll-snap-align: start;
+  scroll-margin: 0;
+}
+
+.container {
+  padding: 1em;
+  background: lightgrey;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 150px;
+  gap: 30px;
+  overflow-x: scroll;
+
+  scroll-snap-type: x proximity;
+}
+
+.item {
+  background: red;
+  width: 150px;
+  height: 50px;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  scroll-snap-align: start;
+  scroll-margin: 15px;
+}
+
+REPRESENTACION DE DATOS
+table {
+  border: 1px solid #000;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+li {
+  list-style-image: url("https://manz.dev/assets/stickers/batmanz.png");
+}
+
+ul {
+  list-style-image: url("https://manz.dev/assets/stickers/batmanz.png");
+  list-style-position: inside;
+}
+
+ul {
+  list-style-type: upper-roman;
+}
+
+li::marker {
+  color: red;
+}
+
+li {
+    /* list-style: <type> <position> <image> */
+    list-style: circle inside none;
+}
+
+.item {
+  counter-increment: detail-counter;
+}
+
+.item::before {
+  content: counter(detail-counter) " ";
+  font-weight: bold;
+  color: red;
+}
+
+@counter-style spanish {
+  system: cyclic;
+  symbols: "uno" "dos" "tres";
+  suffix: "» ";
+}
+
+ul {
+  list-style-type: spanish;
+}
+
+li::marker {
+  color: red;
+}
+
+/* (2), (1), 0, 1, 2, 3, 4, 5, 6, 7, 8... */
+@counter-style negative-paren {
+  system: numeric;
+  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+  negative: "(-" ")";
+}
+
+/* -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8... */
+@counter-style negative-minus {
+  system: numeric;
+  symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+  negative: "-" "";
+}
+
+ol {
+  list-style-type: negative-paren;
+}
+
+@counter-style decimal-zeropad {
+  system: extends decimal;
+  pad: 3 "0";
+}
+
+ul {
+  list-style-type: decimal-zeropad;
+}

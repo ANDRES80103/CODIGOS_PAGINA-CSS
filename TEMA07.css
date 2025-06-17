@@ -1,0 +1,613 @@
+ Layouts
+ Maquetación
+ div {
+  background: darkblue;
+  color: white;
+}
+
+span {
+  background: darkred;
+  color: white;
+}
+
+div {
+  background: darkblue;
+  color: white;
+  display: inline;
+}
+
+span {
+  background: darkred;
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+}
+
+.item {
+  background: deeppink;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+}
+
+.item {
+  background: deeppink;
+}
+
+.middle {
+  display: contents;
+}
+
+body {
+  margin: 0;
+  background: black;
+}
+
+.container {
+  background: indigo;
+  color: white;
+  padding: 2rem;
+}
+
+body {
+  margin: 0;
+  background: black;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+}
+
+body {
+  margin: 0;
+  background: black;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  margin: auto;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+}
+
+html {
+  background: hotpink;
+}
+
+body {
+  margin: 0;
+  background: black;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  margin: auto;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+}
+
+html {
+  background: hotpink;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: black;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  margin: auto;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+}
+
+html {
+  background: hotpink;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: black;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  margin: auto;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: black;
+  align-content: center;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  margin: auto;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: black;
+  align-content: center;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  margin: auto;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  align-content: center;
+}
+
+div {
+  color: white;
+  margin: 1px;
+}
+
+/* Formato de bloque, por defecto en <div> */
+.block {
+  background: darkblue;
+  /* display: block flow; (Por omisión) */
+}
+
+/* Formato en línea, por defecto en <span> */
+.inline {
+  background: darkred;
+  display: inline flow;
+  width: 200px;
+}
+
+/* Formato híbrido de los dos anteriores */
+.flow-root {
+  background: indigo;
+  display: inline flow-root;
+  width: 200px;
+}
+
+.element {
+  display: inline flow;     /* Equivale a display: inline */
+  display: block flow;      /* Equivale a display: block */
+  display: inline flex;     /* Equivale a display: inline-flex */
+  display: block flex;      /* Equivale a display: flex */
+  display: inline grid;     /* Equivale a display: inline-grid */
+  display: block grid;      /* Equivale a display: grid */
+  display: none;            /* Equivale a display: none (igual) */
+  display: contents;        /* Equivale a display: contents (igual) */
+}
+
+<div class="container">
+  <p>
+    Hola a todos. Esto es un pequeño ejemplo donde podremos observar como funciona
+    el sistema de multicolumnas de CSS. Este contenido se basa en un párrafo con
+    información que será separado en varias columnas.
+  </p>
+  <h2>Más información</h2>
+  <p>
+    A lo largo del artículo veremos sus diferentes características y propiedades,
+    y como podemos utilizarlo.
+  </p>
+  <p>
+    En los streams de <strong>ManzDev</strong> puedes echar un vistazo a estas y
+    otras cosas relacionadas con HTML, CSS y Javascript.
+  </p>
+</div>
+
+.container {
+  width: 800px;
+  columns: 3 300px;
+}
+
+.container {
+  width: 800px;
+  columns: 3 200px;
+}
+
+.container h2 {
+  background: steelblue;
+  column-span: all;
+}
+
+.container {
+  height: 250px;
+  column-fill: auto;
+}
+
+FLEX CSS
+.container {
+  display: flex;
+  flex-direction: column;
+  background: darkgrey;
+}
+
+.item {
+  background: indigo;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background: darkgrey;
+}
+
+.item {
+  background: indigo;
+}
+
+.container {
+  /* flex-flow: <flex-direction> <flex-wrap>; */
+  flex-flow: row wrap;
+}
+
+.container {
+  /* 2 parámetros: <row> <column> */
+  gap: 4px 8px;
+  /* Equivalente a */
+  row-gap: 4px;
+  column-gap: 8px;
+
+  /* 1 parámetro: usa el mismo para ambos */
+  gap: 4px;
+  /* Equivalente a */
+  row-gap: 4px;
+  column-gap: 4px;
+}
+
+.container {
+  background: #CCC;
+  display: flex;
+  width: 200px;
+  height: 200px;
+
+  flex-wrap: wrap;
+  align-content: end;
+}
+
+.item {
+  background: #777;
+  width: 50%;
+  height: 50px;
+}
+
+.container {
+  display: flex;
+
+  /* 2 parámetros */
+  place-content: start end;
+  /* Equivalente a... */
+  align-content: start;
+  justify-content: end;
+
+  /* 1 parámetro */
+  place-content: start;
+  /* Equivalente a... */
+  align-content: start;
+  justify-content: start;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+  height: 150px;
+  gap: 20px;
+}
+
+.item {
+  flex-basis: 200px;
+  background: red;
+}
+
+.item {
+  /* flex: <flex-grow> <flex-shrink> <flex-basis> */
+  flex: 1 3 35%;
+
+  /* Equivalente a... */
+  flex-grow: 1;
+  flex-shrink: 3;
+  flex-basis: 35%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  gap: 5px;
+  background: grey;
+}
+
+.item {
+  flex: 0 1 15%;
+  padding: 20px;
+  background: black;
+  color: white;
+  transition: flex 0.5s;
+}
+
+.item:hover {
+  flex: 1 1 10%;
+  background: indigo;
+}
+
+GRID CSS
+.grid {
+  display: grid;
+  grid-template-columns: 50px 300px;
+  grid-template-rows: 200px 75px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns: 100px repeat(4, 50px) 200px;
+  grid-template-rows: repeat(2, 1fr 2fr);
+
+  /* Equivalente a... */
+  grid-template-columns: 100px 50px 50px 50px 50px 200px;
+  grid-template-rows: 1fr 2fr 1fr 2fr;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(400px, 600px));
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.item {
+  background: black;
+  color: white;
+  padding: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  background: grey;
+  gap: 10px;
+}
+
+.item {
+  background: blue;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.grid {
+  column-gap: 100px;
+  row-gap: 10px;
+}
+
+.grid {
+  /* gap: <row-gap> <column-gap> */
+  gap: 20px 80px;
+  /* Equivalente a... */
+  row-gap: 20px;
+  column-gap: 80px;
+
+  gap: 40px;
+  /* Equivalente a... */
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  min-height: 300px;
+  color: white;
+  border: 5px solid black;
+}
+
+.header { background: indigo; }
+.sidebar { background: black; }
+.content { background: orangered; }
+.footer { background: royalblue; }
+
+.container {
+  display: grid;
+  grid-template-columns: [col-start] 1fr [mid-start] 1fr [mid-end] 1fr [col-end];
+  grid-template-rows: [row-start] 1fr [row-mid-start] 1fr [row-mid-end] 1fr [row-end];
+  min-height: 300px;
+  color: white;
+  border: 5px solid black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: [col-start] 1fr [mid-start] 1fr [mid-end] 1fr [col-end];
+  grid-template-rows: [row-start] 1fr [row-mid-start] 1fr [row-mid-end] 1fr [row-end];
+  min-height: 300px;
+  color: white;
+  border: 5px solid black;
+}
+
+/* Ocupa toda la fila inicial, rueda el resto a las siguientes */
+.header {
+  background: indigo;
+  grid-column-start: col-start;
+  grid-column-end: col-end;
+}
+
+/* Realmente no hace falta, porque ya está colocada en este lugar */
+.sidebar {
+  background: black;
+  grid-row-start: row-mid-start;
+  grid-row-end: row-mid-end;
+}
+
+/* Ocupa las dos celdas de la derecha de la fila central */
+.content {
+  background: orangered;
+  grid-column-start: mid-start;
+  grid-column-end: col-end;
+  grid-row-start: row-mid-start;
+  grid-row-end: row-mid-end;
+}
+
+/* Ocupa toda la fila final */
+.footer {
+  background: royalblue;
+  grid-column-start: col-start;
+  grid-column-end: col-end;
+  grid-row-start: row-mid-end;
+  grid-row-end: row-end;
+}
+
+.header {
+  background: indigo;
+  grid-column: col;
+}
+
+.sidebar {
+  background: black;
+}
+
+.content {
+  background: orangered;
+  grid-area: auto / mid-start / auto / col-end;
+}
+
+.footer {
+  background: royalblue;
+  grid-area: auto / col;
+}
+
+POSICIONAMIENTO CSS
+
+div {
+  width: 100px;
+  height: 50px;
+  position: relative;
+}
+
+.a {
+  background: darkred;
+  border: 2px solid black;
+}
+
+.b {
+  background: indigo;
+  border: 2px solid black;
+
+  position: relative;
+  top: -25px;
+  left: 25px;
+}
+
+div {
+  width: 200px;
+  height: 100px;
+}
+
+.a {
+  background: darkred;
+
+  position: relative;
+  z-index: 5;
+}
+
+.b {
+  background: indigo;
+  position: relative;
+  top: -50px;
+  left: 50px;
+}
+
+.container {
+  border: 5px solid indigo;
+  width: 600px;
+  height: 300px;
+  margin: 20px;
+}
+
+.middle {
+  border: 5px solid steelblue;
+  width: 300px;
+  height: 150px;
+  margin: 50px;
+}
+
+.element {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.reference {
+  anchor-name: --first-box;
+}
+
+.element {
+  position: absolute;
+  position-anchor: --first-box;
+  bottom: anchor(top);
+  left: anchor(left);
+}
+
+.reference {
+  anchor-name: --first-box;
+}
+
+.element {
+  position: absolute;
+  position-anchor: --first-box;
+  position-area: top;
+}

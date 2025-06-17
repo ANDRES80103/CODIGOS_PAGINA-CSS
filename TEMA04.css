@@ -1,0 +1,282 @@
+Lógica CSS
+div {
+          transform: ... /* El navegador implementa la especificación oficial */
+  -webkit-transform: ... /* Chrome antiguo / Safari (Motor Webkit) */
+     -moz-transform: ... /* Firefox antiguo (Motor Gecko) */
+      -ms-transform: ... /* Internet Explorer (Motor Trident) */
+       -o-transform: ... /* Opera antiguo (Motor Presto) */
+}
+
+.element {
+  width: calc(100px + 50px);
+  height: 200px;
+}
+
+.elemento {
+  width: calc(200px + 50px);
+  height: 200px;
+  background: indigo;
+}
+
+
+.elemento {
+  width: calc(200px + 1em);
+  height: 200px;
+  background: blue;
+}
+
+.element {
+  --size: 200px;
+
+  width: calc(200px + var(--size));
+  height: var(--size);
+  background: indigo;
+}
+
+.element {
+  --x: 25px;
+  --y: calc(var(--x) * -1);
+
+  width: 50px;
+  height: 50px;
+  background: indigo;
+
+  transform: translate(var(--x), var(--y));
+}
+
+.element {
+  --size: 50px;
+
+  width: calc(calc(var(--size) + 100px) * 2);   /* ❌ No es necesario */
+  width: calc(var(--size) + 100px * 2);         /* ✅ Mejor */
+  height: calc(var(--size) + 100px);
+  background: indigo;
+}
+
+.elemento {
+  width: calc(200px + 50px);
+  height: 200px;
+  background: indigo;
+}
+
+.elemento {
+  width: calc(200px + 1em);
+  height: 200px;
+  background: blue;
+}
+
+.element {
+  --size: 200px;
+
+  width: calc(200px + var(--size));
+  height: var(--size);
+  background: indigo;
+}
+.element {
+  --x: 25px;
+  --y: calc(var(--x) * -1);
+
+  width: 50px;
+  height: 50px;
+  background: indigo;
+
+  transform: translate(var(--x), var(--y));
+}
+
+.element {
+  --size: 50px;
+
+  width: calc(calc(var(--size) + 100px) * 2);   /* ❌ No es necesario */
+  width: calc(var(--size) + 100px * 2);         /* ✅ Mejor */
+  height: calc(var(--size) + 100px);
+  background: indigo;
+}
+
+.container {
+  width: 400px;
+  height: 200px;
+  background: grey;
+}
+
+.elemento {
+  width: min(200px, 25%);
+  height: 200px;
+  background: red;
+}
+
+.container {
+  width: 400px;
+  height: 225px;
+  background: grey;
+}
+
+.elemento {
+  width: max(calc(200px - 100px), calc(25%, 14vw));     /* ❌ */
+  width: max(200px - 100px, 25%, 14vw);                 /* ✅ */
+  height: 150px;
+  background: red;
+}
+
+.container {
+  width: 400px;
+  height: 200px;
+  background: grey;
+}
+
+.element-1 {
+  width: max(100px, min(50%, 300px));
+  height: 100px;
+  background: red;
+}
+
+.element-2 {
+  width: clamp(100px, 50%, 300px);
+  height: 100px;
+  background: black;
+}
+
+.element {
+  height: 25px;
+  background: indigo;
+  color: white;
+  margin: 5px;
+}
+
+.a { width: round(124.75px, 1px); }     /* 125px */
+.b { width: round(124.75px, 10px); }    /* 120px */
+.c { width: round(124.75px, 100px); }   /* 100px */
+.d { width: round(124.75px, 0.1px); }   /* 124.7px */
+.e { width: round(124.75px, 0.01px); }  /* 124.75px */
+.f { width: round(124.75px, 0.001px); } /* 124.75px */
+
+.element {
+  height: 25px;
+  background: indigo;
+  color: white;
+  margin: 5px;
+}
+
+.a { width: round(124.75px, 1px); }     /* 125px */
+.b { width: round(124.75px, 10px); }    /* 120px */
+.c { width: round(124.75px, 100px); }   /* 100px */
+.d { width: round(124.75px, 0.1px); }   /* 124.7px */
+.e { width: round(124.75px, 0.01px); }  /* 124.75px */
+.f { width: round(124.75px, 0.001px); } /* 124.75px */
+
+.element {
+  height: 25px;
+  background: indigo;
+  color: white;
+  margin: 5px;
+}
+
+.g { color: black; }
+
+.a { width: round(nearest, 124.75px, 1px); }    /* 125px */
+.b { width: round(nearest, 124.25px, 1px); }    /* 124px */
+.c { width: round(up, 124.75px, 1px); }         /* 125px */
+.d { width: round(up, 124.25px, 1px); }         /* 125px */
+.e { width: round(down, 124.75px, 1px); }       /* 124px */
+.f { width: round(down, 124.25px, 1px); }       /* 124px */
+.g { width: round(to-zero, -25px, 1px); }       /* 0px */
+.h { width: round(124.75px, 1px); }             /* 125px, nearest por defecto */
+
+.element {
+  height: 25px;
+  background: indigo;
+  color: white;
+}
+
+.b, .d { color: black; }
+
+.a { width: mod(50px, 100px); }    /* 50px */
+.b { width: mod(100px, 100px); }   /* 0px */
+.c { width: mod(150px, 100px); }   /* 50px */
+.d { width: mod(200px, 100px); }   /*  0px */
+.e { width: mod(-500px, 100px); }   /* 100px */
+
+.element {
+  height: 25px;
+  background: indigo;
+  color: white;
+}
+
+.b, .d { color: black; }
+
+.a { width: rem(50px, 100px); }    /* 50px */
+.b { width: rem(100px, 100px); }   /* 0px */
+.c { width: rem(150px, 100px); }   /* 50px */
+.d { width: rem(200px, 100px); }   /*  0px */
+.e { width: rem(-500px, 100px); }   /* 100px */
+
+.element {
+  width: calc(pow(2, var(--size)) * 1px);
+  height: 25px;
+  background: indigo;
+  margin: 5px;
+}
+
+.a { --size: 1; }  /* 2px */
+.b { --size: 2; }  /* 4px */
+.c { --size: 4; }  /* 16px */
+.d { --size: 8; }  /* 256px */
+
+.element {
+  --size: 200px;
+
+  width: calc(200px + var(--size));
+  height: var(--size);
+  background: indigo;
+}
+
+.container {
+  /* Condición simple */
+  width: if( *condición*: valor_verdadero; else: valor_falso);
+
+  /* Condición múltiple */
+  width: if( *condición1*: valor_verdadero;
+             *condición2*: valor_verdadero;
+             else: valor_falso);
+}
+@function --negative (--value) {
+  result: calc(-1 * var(--value));
+}
+
+.container {
+  translate: 20px --negative(20px);   /* 20px -20px */
+}
+
+@function --half-size (--size type(<length> | <percentage>)) {
+  result: calc(var(--size) / 2);
+}
+
+@function --my-font-size() {
+  result: 1rem;
+
+  @media (width > 1000px) {
+    result: 2rem;
+  }
+}
+
+.container {
+  /* Condición simple */
+  width: if( *condición*: valor_verdadero; else: valor_falso);
+
+  /* Condición múltiple */
+  width: if( *condición1*: valor_verdadero;
+             *condición2*: valor_verdadero;
+             else: valor_falso);
+}
+
+.container {
+  color: if(
+    style(--bgcolor: white): black;
+    else: white
+  );
+}
+
+.container {
+  width: random(100px, 500px);    /* Tamaño al azar entre 100px y 500px */
+  height: random(100px, 500px);   /* Tamaño al azar entre 100px y 500px */
+  background: indigo;
+}

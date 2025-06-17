@@ -1,1 +1,193 @@
  Color y fondos
+ .element {
+  width: 150px;
+  height: 150px;
+  background-color: indigo;   /* Color de fondo */
+  color: white;               /* Color de texto */
+}
+.element {
+  background-color: blue;
+  background-color: transparent;
+  background-color: indigo;
+  background-color: rebeccapurple;  /* En honor a Rebeca, la hija de Eric Meyer */
+}
+.element {
+  background-color: rgb(125 80 10);
+  background-color: rgb(55% 25% 75%);
+}
+
+.element {
+  background-color: rgb(100% 50% 25% / 50%);
+  background-color: rgb(100% 50% 25% / 0.5);
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.element {
+  background-color: rgb(125, 80, 10);         /* ❌ Evitar */
+  background-color: rgb(55%, 25%, 75%);       /* ❌ Evitar */
+  background-color: rgb(0, 0, 0, 0.5);        /* ❌ Evitar */
+  background-color: rgba(0, 50, 150, 0.5);    /* ❌ Evitar */
+}
+
+.element {
+  background-color: #512592;    /* Formato hexadecimal */
+  background-color: #000000;    /* Abreviable a #000 */
+  background-color: #451;       /* Equivalente a #445511; */
+}
+
+.element {
+  background-color: #aa44bb77;
+  background-color: #a4b7;
+}
+
+.element {
+  background-color: #512592;    /* Formato hexadecimal */
+  background-color: #000000;    /* Abreviable a #000 */
+  background-color: #451;       /* Equivalente a #445511; */
+}
+
+.element {
+  background-color: #aa44bb77;
+  background-color: #a4b7;
+}
+
+.element {
+  background-color: hsl(120deg 25% 75%);
+  background-color: hsl(120 25% 75%);
+  background-color: hsl(360deg 0% 25%);
+}
+
+.element {
+  background-color: hsl(180deg 50% 25% / 75%);
+  background-color: hsl(180 50% 25% / 0.4);
+}
+
+.element {
+  background-color: hsl(120deg, 25%, 75%, 75%);
+  background-color: hsl(180deg, 50%, 25%, 0.75);
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+}
+
+.item-1 { background: color-mix(in oklch, red 40%, blue 60%); }
+.item-2 { background: color-mix(in oklch longer hue, red 40%, blue 60%); }
+.item-3 { background: color-mix(in oklch shorter hue, red 40%, blue 60%); }
+
+button {
+  --color: indigo;
+  --dark-color: color-mix(in srgb, var(--color), black 25%);
+  --light-color: color-mix(in srgb, var(--color), white 25%);
+
+  border: 1px solid var(--dark-color);
+  border-bottom-width: 8px;
+  border-top-color: var(--light-color);
+  background: var(--color);
+  color: #fff;
+  font-family: Jost, sans-serif;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.75rem;
+  transition: transform 0.2s, border 0.2s;
+
+  &:active {
+    border-bottom-width: 1px;
+    transform: translateY(7px);
+    background: var(--dark-color);
+  }
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background: rgb(from #a8201a r g b);
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background: rgb(from #a8201a 0 g b);
+}
+
+.item-0 {
+  --color: #ff0000;
+
+  width: 100px;
+  height: 100px;
+  background: var(--color);
+}
+
+.item-1 {
+  --color: #ff0000;
+
+  width: 100px;
+  height: 100px;
+  background: rgb(from var(--color) r calc(g + 0.5) calc(b + 0.5));
+}
+
+.item-2 {
+  --color: #ff0000;
+
+  width: 100px;
+  height: 100px;
+  background: rgb(from var(--color) r g b / calc(alpha - 0.25));
+}
+
+
+.item {
+  --r: 75%;
+  --g: 25%;
+  --b: 100%;
+  --alpha: 33%;
+
+  width: 100px;
+  height: 50px;
+  background: rgb(var(--r) var(--g) var(--b) / var(--alpha));
+
+  /* Equivalente a */
+  /* background: rgb(75% 25% 100% / 33%); */
+}
+.box {
+  width: 50px;
+  height: 50px;
+  background: rgb(var(--r) var(--g) var(--b) / var(--alpha));
+}
+
+.alpha-66 { --alpha: 66%; }
+.alpha-100 { --alpha: 100%; }
+.blue-400 { --r: 25%; --g: 25%; --b: 75%; }
+.green-400 { --r: 25%; --g: 75%; --b: 25%; }
+
+.element {
+  background-color: hwb(120deg 25% 75%);
+  background-color: hwb(120 25% 75%);
+  background-color: hwb(360deg 0% 25%);
+}
+
+.element {
+  background-color: hsl(180deg 50% 25% / 75%);
+  background-color: hsl(180 50% 25% / 0.4);
+}
+
+.element {
+  background-color: lch(50 75 50);
+  background-color: lch(50% 135 360deg);
+  background-color: lch(25% 150 360);
+}
+
+.element {
+  background-color: oklch(0.5 0.3 50);
+  background-color: oklch(50% 0.2 160deg);
+  background-color: oklch(1 0.1 360);
+}
+
+.element {
+  background-color: oklch(0.5 0.3 50 / 75%);
+  background-color: oklch(0.5 0.3 50 / 0.75);
+}

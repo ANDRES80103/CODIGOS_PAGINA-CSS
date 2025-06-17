@@ -1,0 +1,700 @@
+ Selectores CSS
+ div {
+  background-color: red;
+}
+
+div {
+  background-color: red;
+}
+
+strong {
+  color: red;
+}
+
+#saludo {
+  background-color: blue;
+  color: white;
+}
+
+.classic {
+  background-color: green;
+  color: white;
+}
+
+.back {
+  background-color: orange;
+  color: white;
+}
+.classic {
+  background-color: green;
+  color: white;
+}
+
+.back {
+  background-color: orange;
+  color: white;
+}
+
+button.classic {
+  background-color: green;
+  color: white;
+}
+
+p.classic {
+  color: red;
+}
+
+button.classic.primary.large {
+  /* Estilos CSS */
+}
+
+[disabled] {
+  background: grey;
+}
+
+a[rel="nofollow"] {
+  background: red;
+}
+
+[data-mood~="happy"] {
+  background: green;
+  color: white;
+  padding: 5px;
+}
+
+[lang|="es"] {
+  background: red;
+  color: white;
+  padding: 5px;
+}
+
+a[href]::after {
+  content: ": " attr(href);
+  display: inline-block;
+  color: #666;
+}
+
+a[href^="http://"]::after {
+  content: ": (Página no segura) " attr(href);
+}
+
+a[href]::before {
+  content: url("url.svg");
+}
+
+a[href$=".pdf"]::before {
+  content: url("pdf.svg");
+}
+
+a[href*="manz"] {
+  background-color: orange;
+}
+
+a[href$=".pdf"] {
+  background: red;
+}
+
+a[href$=".pdf" i] {
+  background: red;
+}
+
+div#page div {
+  background-color: gold;
+}
+
+/* Forma 1: Muy específica */
+.menu .options ul li a {
+  color: orange;
+}
+
+/* Forma 2: Más general, menos específica */
+.menu a {
+  color: orange;
+}
+
+#page > div {
+  background-color: gold;
+}
+
+div.post span + span {
+  background-color: gold;
+}
+
+/* Elimina márgenes y rellenos de todos los elementos de un documento HTML */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-logo {
+  border-color: red;
+  background: white;
+}
+
+.container-alert {
+  border-color: red;
+  background: white;
+}
+
+.container-warning {
+  border-color: red;
+  background: white;
+}
+
+.container-logo, .container-alert, .container-warning {
+  border-color: white;
+  background: red;
+}
+
+.container-logo,
+.container-warning {
+  border-color: white;
+  background: red;
+}
+
+:is(.container-logo, .container-warning) {
+  border-color: white;
+  background: red;
+}
+
+.container .list,
+.container .menu,
+.container ul {
+  /* ... */
+}
+
+.container .list, .menu, ul {
+  /* ... */
+}
+
+.container :is(.list, .menu, ul) {
+  /* ... */
+}
+
+.container .list,   /* Especificidad (0,2,0) */
+.container .menu,   /* Especificidad (0,2,0) */
+.container ul {     /* Especificidad (0,1,1) */
+  /* ... */
+}
+
+.container :is(.list, .menu, ul) {  /* Especificidad (0,2,0) */
+  /* ... */
+}
+p:not(.main) {
+  border: 2px solid black;
+  padding: 8px;
+  color: white;
+  background: indigo;
+}
+
+p:not(:is(.first, .last)) {
+  border: 2px solid black;
+  padding: 8px;
+  color: white;
+  background: indigo;
+}
+
+p:not(.first):not(.last) {
+  border: 2px solid black;
+  padding: 8px;
+  color: white;
+  background: indigo;
+}
+.container .element {
+  background: red;
+}
+a {
+  /* ... */
+}
+
+a:has(> img) {
+  /* ... */
+}
+
+img {
+  width: 64px;
+  height: 64px;
+}
+
+a {
+  border: 3px solid black;
+  padding: 5px;
+}
+
+a:hover {
+  border-color: blue;
+  color: blue;
+}
+
+a:hover:has(> img) {
+  border-color: red;
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  background: grey;
+  margin: 10px;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  background: #222;
+  border: 2px solid black;
+}
+
+.container:has(:nth-child(3 of .item)) {
+  background: indigo;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  background: grey;
+}
+
+html:has(input:checked) .item {
+  background: indigo;
+}
+a {
+  padding: 5px;
+}
+
+a:hover {
+  background: red;
+  color: white;
+  text-decoration: none;
+}
+
+/* Usuario mueve el ratón sobre un enlace */
+a:hover {
+  background-color: cyan;
+  padding: 2px
+}
+
+/* Usuario mueve el ratón sobre un div y resalta todos los enlaces que contiene */
+div:hover a {
+  background-color: steelblue;
+  color: white;
+}
+
+a:active {
+  border: 2px solid #FF0000;
+  padding: 2px
+}
+
+a:active {
+  border: 2px solid #FF0000;
+  padding: 2px
+}
+
+/* El campo ha ganado el foco */
+input:focus {
+  border: 2px dotted #444
+}
+
+form :focus-within {
+  background: yellow;
+}
+
+a:link {
+  color: green;
+  font-weight: bold
+}
+
+a:link {
+  color: green;
+  font-weight: bold
+}
+
+a:visited {
+  color: purple;
+  font-weight: bold;
+}
+
+:target {
+  background: gold;
+  color: #333;
+  padding: 5px;
+}
+
+/* Selecciona el elemento que tenga el idioma español */
+:lang(es) {
+  /* ... */
+}
+
+/* Selecciona elementos que estén en español o inglés (*y relacionados*) */
+:lang(es, es-*, en, en-*) {
+  /* ... */
+}
+:dir(ltr) {
+  border-left: 4px solid darkred;
+}
+
+:dir(rtl) {
+  border-right: 4px solid darkred;
+}
+
+:root {
+  background: black;
+}
+
+html {
+  background: red;
+}
+
+strong:first-child {
+  background-color: cyan;
+}
+
+strong:last-child {
+  background-color: green;
+}
+
+.parent :nth-child(2 of .special) {
+  background: red;
+}
+
+/* Selecciona "Element 1" */
+.container div:first-of-type {
+  background: gold;
+}
+
+/* Selecciona "Element 3" */
+.container p:first-of-type {
+  background: lime;
+}
+
+/* Selecciona los dos anteriores */
+.container :first-of-type {
+  border: 2px solid black;
+}
+/* Seleccionamos sólo el "Element 2", ya que no hay un segundo <p> */
+.container :nth-of-type(2) {
+  background: gold;
+}
+
+.container :only-child {
+  /* Selecciona el hijo de un padre que sólo tiene un elemento hijo */
+}
+
+/* Selecciona los hijos de un padre que sólo tiene un elemento hijo de su mismo tipo */
+/* En este caso, seleccionaría todos */
+.container :only-of-type {
+  background: gold;
+}
+
+div {
+  background: grey;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+}
+
+:empty {
+  border: 3px solid red;
+}
+
+input:checked + span {
+  color: green;
+}
+
+input:read-only {
+  background-color: darkred;
+  color: white
+}
+input:read-write {
+  background-color: green;
+  color: white
+}
+
+:read-write {
+  background-color: cyan;
+  color: black;
+  padding: 5px;
+}
+input:placeholder-shown {
+  background: #555;
+  padding: 5px;
+  border: 2px solid #000;
+  color: white;
+}
+
+:default {
+  background: red;
+  color: white;
+  border: 3px solid red;
+  accent-color: red;
+}
+
+
+input:required {
+  border: 2px solid red;
+}
+input:optional {
+  border: 2px solid blue;
+}
+
+input:invalid {
+  background: red;
+}
+
+input:valid {
+  background-color: green;
+}
+
+input {
+  color: white;
+}
+
+input:invalid {
+  background-color: darkred;
+  color: white;
+}
+
+input:in-range {
+  background-color: green;
+  color: white;
+}
+input:out-of-range {
+  background-color: darkred;
+  color: white;
+}
+
+.screen {
+  display: none;
+}
+
+:fullscreen {
+  display: block;
+  background: linear-gradient(120deg, black, indigo);
+  border: 3px solid red;
+  color: white;
+  padding: 1rem;
+}
+
+:modal {
+  display: block;
+  background: linear-gradient(120deg, black, indigo);
+  border: 3px solid red;
+  color: white;
+  padding: 1rem;
+}
+
+ul li::marker {
+  content: "⮞ ";
+  color: red;
+}
+
+dialog::backdrop {
+  background: linear-gradient(140deg, indigo, black);
+  opacity: 0.9;
+}
+
+input::file-selector-button {
+  background: indigo;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+}
+
+input::file-selector-button {
+  background: indigo;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+}
+
+q::before {
+  content: "«";
+  color: red;
+}
+
+q::before {
+  content: "«";
+  color: red;
+}
+
+q::after {
+  content: "»";
+  color: red;
+}
+
+q {
+  color: darkred;
+  font-style: italic;
+}
+
+q::before {
+  content: "«";
+  color: red;
+}
+
+q::after {
+  content: "» (" attr(data-author) ")";
+  color: red;
+}
+
+q {
+  color: darkred;
+  font-style: italic;
+}
+
+a[href]::after {
+  content: "( " attr(href) " )";
+  padding: 5px;
+  color: navy;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap");
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+}
+
+p::first-letter {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 5rem;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+p::first-line {
+  color: red;
+}
+::selection {
+  background: indigo;
+  color: white;
+}
+
+::target-text {
+  background: lime;
+  color: black;
+}
+textarea {
+  min-width: 400px;
+  min-height: 100px;
+  font-size: 1.25rem;
+}
+
+::spelling-error {
+  background: darkred;
+  color: white;
+}
+
+textarea {
+  min-width: 400px;
+  min-height: 100px;
+  font-size: 1.25rem;
+}
+
+::spelling-error {
+  background: darkred;
+  color: white;
+}
+
+::grammar-error {
+  background: orangered;
+  color: white;
+}
+
+.page {
+  background: linear-gradient(blueviolet, hotpink);
+  height: 100vh;
+  border-width: 10px;
+  border-style: solid;
+  border-color: black;
+}
+
+.page{background:linear-gradient(#8a2be2,hotpink);height:100vh;border:10px solid #000}
+.container {
+  width: 800px;
+  height: 300px;
+  background: grey;
+}
+
+.container .item {
+  height: 150px;
+  background: orangered;
+}
+
+.container {
+  width: 800px;
+  height: 300px;
+  background: grey;
+
+  .item {
+    height: 150px;
+    background: orangered;
+  }
+}
+
+.container {
+  background: grey;
+
+  .item {
+    background: indigo;
+  }
+}
+.container {
+  background: grey;
+
+  & div {
+    background: indigo;
+  }
+}
+
+.container {
+  background: grey;
+
+  &:hover {
+    background: indigo;
+  }
+}
+
+.container {
+  width: 800px;
+  height: 300px;
+  background: grey;
+
+  .item & {
+    background: green;
+    height: 100px;
+  }
+}
+
+.container {
+  width: 800px;
+  height: 300px;
+  background: grey;
+
+  .item & .item & { }     /* Equivalente a -> .item .container .item .container */
+  :is(.page, .menu) & {}  /* Equivalente a -> .page .container, .menu .container */
+  :not(&) { }             /* Equivalente a -> :not(.container) */
+}
+
+.container {
+  width: 800px;
+  height: 300px;
+  background: grey;
+
+  .item & .item & { }     /* Equivalente a -> .item .container .item .container */
+  :is(.page, .menu) & {}  /* Equivalente a -> .page .container, .menu .container */
+  :not(&) { }             /* Equivalente a -> :not(.container) */
+}
+
+.container {
+  height: 200px;
+  background: grey;
+
+  @media (orientation: landscape) {
+    height: 100vh;
+  }
+}
+

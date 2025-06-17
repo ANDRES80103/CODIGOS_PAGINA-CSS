@@ -1,0 +1,243 @@
+ Tipografías
+ .container {
+  font-family: Verdana;
+  font-family: 'PT Sans';
+}
+
+.container {
+  font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+}
+.container {
+  /* font: <style> <variant> <weight> <stretch> <size/line-height> <family>; */
+}
+
+.container {
+  /* Opción 1 */
+  font: italic normal 400 16px Arial, Verdana, sans-serif;
+
+  /* Opción 2 */
+  font: italic normal 400 normal 16px/22px Arial, Verdana, sans-serif;
+}
+.text-container {
+  /* Sintaxis clásica */
+  text-decoration: underline;
+
+  /* Sintaxis moderna */
+  text-decoration: 2px wavy overline gold;
+}
+.text-container {
+  text-decoration: 2px solid underline red;
+  text-underline-position: under;
+  text-underline-offset: 10px;
+}
+.text-container {
+  font-size: 2rem;
+  text-emphasis-style: open triangle;
+  text-emphasis-color: red;
+  text-emphasis-position: over right;
+}
+
+.text-container {
+  font-size: 2rem;
+  text-emphasis-style: "🎈";
+  text-emphasis-position: under left;
+}
+
+.text-wrap {
+  background: black;
+  color: hotpink;
+  padding: 2rem;
+  max-width: 300px;
+  text-wrap: wrap;
+}
+.container {
+  max-width: 450px;
+  min-width: 250px;
+  background: #ccc;
+  padding: 1rem;
+  overflow: hidden;
+  resize: horizontal;
+}
+
+h1 {
+  margin: 0;
+  text-wrap: wrap;
+  background: indigo;
+  color: white;
+  padding: 0.5rem;
+}
+
+.container {
+  max-width: 450px;
+  min-width: 250px;
+  background: #ccc;
+  padding: 1rem;
+  overflow: hidden;
+  resize: horizontal;
+}
+
+.text-wrap {
+  margin: 0;
+  text-wrap: wrap;
+  background: indigo;
+  color: white;
+  padding: 1rem;
+}
+body {
+  background: #111;
+}
+
+.text {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: black;
+  -webkit-text-stroke: 1px white;
+}
+
+body {
+  background: #111;
+}
+
+.text {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: black;
+  text-shadow:
+    1px 0 0 white,    /* Desplaza a la derecha */
+    -1px 0 0 white,   /* Desplaza a la izquierda */
+    0 1px 0 white,    /* Desplaza abajo */
+    0 -1px 0 white;   /* Desplaza arriba */
+}
+
+body {
+  background: #111;
+}
+
+.text {
+  --more: 2px;
+  --minus: calc(var(--more) * -1);
+  --border-color: hotpink;
+
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: black;
+  filter:
+    drop-shadow(var(--more) 0 0 var(--border-color))
+    drop-shadow(var(--minus) 0 0 var(--border-color))
+    drop-shadow(0 var(--more) 0 var(--border-color))
+    drop-shadow(0 var(--minus) 0 var(--border-color));
+}
+
+body {
+  background: #111;
+}
+
+svg text {
+  font-family: sans-serif;
+  font-size: 4rem;
+  fill: black;
+  stroke: hotpink;
+  stroke-width: 3px;
+}
+body {
+  background: #111;
+}
+
+.text {
+  font-family: Jost, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  background-image: linear-gradient(indigo, hotpink);
+  color: white;
+}
+body {
+  background: #111;
+  color: white;
+}
+
+.text {
+  font-family: Jost, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  background-image: linear-gradient(indigo, hotpink);
+  background-clip: text;
+  color: white;
+}
+
+body {
+  background: #111;
+}
+
+.text {
+  font-family: Jost, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  background: linear-gradient(indigo 50%, hotpink 75%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background: #111;
+}
+
+.text {
+  font-family: Jost, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  background: linear-gradient(indigo, hotpink, white);
+  background-clip: text;
+  color: white;
+  -webkit-text-stroke: 8px transparent;
+}
+
+body {
+  background: #111;
+}
+
+.text {
+  font-family: Jost, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  background-image: linear-gradient(var(--angle), hotpink, indigo);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: move 4s linear alternate infinite;
+}
+
+@keyframes move {
+  0% { --angle: 0.25turn }
+  100% { --angle: 0.75turn }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0turn;
+}
+.container {
+  word-break: break-word;
+  line-break: normal;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.container {
+  text-indent: 2em hanging;
+  text-indent: 2em each-line;
+  text-indent: 2em hanging each-line;
+}
+.text-container {
+  /* Desactiva pesos, cursivas y activa versalitas */
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
+  font-synthesis-small-caps: auto;
+
+  /* Activa pesos, cursivas y versalitas */
+  font-synthesis: weight style small-caps;
+}
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tipografías CSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost&family=PT+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: 'PT Sans', Verdana, sans-serif;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 450px;
+      min-width: 250px;
+      background: #ccc;
+      padding: 1rem;
+      overflow: hidden;
+      resize: horizontal;
+      color: black;
+    }
+
+    .text-decor {
+      text-decoration: 2px solid underline red;
+      text-underline-position: under;
+      text-underline-offset: 10px;
+    }
+
+    .text-emphasis {
+      font-size: 2rem;
+      text-emphasis-style: "🎈";
+      text-emphasis-position: under left;
+      text-emphasis-color: red;
+    }
+
+    .text-wrap {
+      background: black;
+      color: hotpink;
+      padding: 1rem;
+      max-width: 300px;
+      text-wrap: wrap;
+    }
+
+    .stroke-text {
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 3rem;
+      color: black;
+      -webkit-text-stroke: 1px white;
+    }
+
+    .shadow-text {
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 3rem;
+      color: black;
+      text-shadow:
+        1px 0 0 white,
+        -1px 0 0 white,
+        0 1px 0 white,
+        0 -1px 0 white;
+    }
+
+    .dropshadow-text {
+      --more: 2px;
+      --minus: calc(var(--more) * -1);
+      --border-color: hotpink;
+
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 3rem;
+      color: black;
+      filter:
+        drop-shadow(var(--more) 0 0 var(--border-color))
+        drop-shadow(var(--minus) 0 0 var(--border-color))
+        drop-shadow(0 var(--more) 0 var(--border-color))
+        drop-shadow(0 var(--minus) 0 var(--border-color));
+    }
+
+    .gradient-text {
+      font-family: Jost, sans-serif;
+      font-weight: bold;
+      font-size: 4rem;
+      background: linear-gradient(indigo 50%, hotpink 75%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .animated-gradient {
+      font-family: Jost, sans-serif;
+      font-weight: bold;
+      font-size: 4rem;
+      background-image: linear-gradient(var(--angle), hotpink, indigo);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: move 4s linear alternate infinite;
+    }
+
+    @keyframes move {
+      0% { --angle: 0.25turn; }
+      100% { --angle: 0.75turn; }
+    }
+
+    @property --angle {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0turn;
+    }
+
+    .spacing {
+      word-break: break-word;
+      line-break: normal;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-indent: 2em hanging each-line;
+    }
+
+    .text-synthesis {
+      font-synthesis-weight: none;
+      font-synthesis-style: none;
+      font-synthesis-small-caps: auto;
+      font-synthesis: weight style small-caps;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="gradient-text">Tipograf
